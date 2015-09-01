@@ -171,12 +171,6 @@ module CamoProxyTests
     end
   end
 
-  def test_404s_on_images_greater_than_5_megabytes
-    assert_raise RestClient::ResourceNotFound do
-      request('http://apod.nasa.gov/apod/image/0505/larryslookout_spirit_big.jpg')
-    end
-  end
-
   def test_404s_on_host_not_found
     assert_raise RestClient::ResourceNotFound do
       request('http://flabergasted.cx')
